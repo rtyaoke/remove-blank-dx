@@ -27,8 +27,9 @@ $border: 0.25rem solid #000;
   .label--textarea {
     position: absolute;
     left: 0.8rem;
+    top: -2rem;
     padding: 0 0.75rem 0 0.25rem;
-    background-color: #fff;
+    background-color: white;
     font-size: 2rem;
     font-weight: bold;
     z-index: 3;
@@ -40,7 +41,6 @@ $border: 0.25rem solid #000;
       bottom: -0.1rem;
       width: 17rem;
       height: 1.05rem;
-      // background-color: rgba(255, 0, 0, 0.6);
       background-color: white;
       z-index: -2;
     }
@@ -54,7 +54,6 @@ $border: 0.25rem solid #000;
     resize: vertical;
     padding: 1.5rem 0 0.5rem 0.7rem;
     overflow-y: scroll;
-    // scrollbar-width: thin;
     scroll-padding-top: 1.5rem;
 
     &:focus {
