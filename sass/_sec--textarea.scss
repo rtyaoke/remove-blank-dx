@@ -1,0 +1,57 @@
+.sec--textarea {
+  display: flex;
+  justify-content: space-between;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.wrap--textarea {
+  position: relative;
+  width: 48%;
+  margin-bottom: 1.5rem;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+
+  .label--textarea {
+    position: absolute;
+    left: 1.5rem;
+    top: -2rem;
+    line-height: 1.3;
+    padding: 0 0.7rem 0 0.8rem;
+    background-color: $color--bg;
+    font-size: 2rem;
+    font-weight: bold;
+    z-index: 3;
+
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: -0.1rem;
+      width: 17rem;
+      height: 1.05rem;
+      background-color: $color--bg;
+      z-index: -2;
+    }
+  }
+
+  .textarea {
+    width: 100%;
+    min-height: 10rem;
+    margin-top: 0.8rem;
+    border: $border;
+    border-radius: 0.5rem;
+    resize: vertical;
+    padding: 1.5rem 0 0.5rem 0.7rem;
+    overflow-y: scroll;
+    scroll-padding-top: 1.5rem;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

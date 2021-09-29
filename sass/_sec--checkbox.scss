@@ -1,0 +1,86 @@
+input[type="checkbox"] {
+  display: none;
+}
+
+.checkbox {
+  /* Block */
+  display: block;
+  width: 80%;
+  height: 3rem;
+  /* Position */
+  position: relative;
+  margin: 1rem auto;
+  padding-left: 3.5rem;
+  /* Modify */
+  border: 0.25rem solid $color--before;
+  border-radius: 0.5rem;
+  /* Text */
+  font-size: 2rem;
+  color: $color--before;
+  line-height: 3rem;
+  /* Accessibility */
+  cursor: pointer;
+  user-select: none;
+
+  &:before {
+    $box-size: 1.5rem;
+    /* Content */
+    content: "";
+    /* block */
+    display: block;
+    width: $box-size;
+    height: $box-size;
+    /* Position */
+    position: absolute;
+    top: 50%;
+    left: 0.8rem;
+    transform: translateY(-50%);
+    /* Modify */
+    border: 2px solid $color--before;
+    border-radius: 3px;
+    background: $color--bg;
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    height: 20px;
+    width: 9px;
+    position: absolute;
+    top: 50%;
+    left: 1.2rem;
+    transform: rotate(45deg);
+    margin-top: -16px;
+    opacity: 0;
+  }
+
+  @mixin border($color) {
+    border-right: 6px solid $color;
+    border-bottom: 3px solid $color;
+  }
+
+  &[for="check01"]:after {
+    @include border($color--pink);
+  }
+
+  &[for="check02"]:after {
+    @include border($color--blue);
+  }
+
+  &[for="check03"]:after {
+    @include border($color--yellow);
+  }
+
+  input[type="checkbox"]:checked + &:before {
+    border-color: $color--after;
+  }
+
+  input[type="checkbox"]:checked + &:after {
+    opacity: 1;
+  }
+
+  input[type="checkbox"]:checked + & {
+    border-color: $color--after;
+    color: $color--after;
+  }
+}

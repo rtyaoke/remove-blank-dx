@@ -1,63 +1,6 @@
-body {
-  padding: 3rem;
-}
-
-.container {
-  max-width: 1080px;
-  margin: 0 auto;
-}
-
-$border: 0.25rem solid #000;
-
-.title {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  border-bottom: $border;
-}
-
-.wrap {
-  display: flex;
-  justify-content: space-between;
-}
-
-.wrap--textarea {
-  position: relative;
-  width: 48%;
-
-  .label--textarea {
-    position: absolute;
-    left: 0.8rem;
-    top: -2rem;
-    padding: 0 0.75rem 0 0.25rem;
-    background-color: white;
-    font-size: 2rem;
-    font-weight: bold;
-    z-index: 3;
-
-    &:after {
-      content: "";
-      display: block;
-      position: absolute;
-      bottom: -0.1rem;
-      width: 17rem;
-      height: 1.05rem;
-      background-color: white;
-      z-index: -2;
-    }
-  }
-
-  textarea {
-    width: 100%;
-    margin-top: 0.8rem;
-    border: $border;
-    border-radius: 0.5rem;
-    resize: vertical;
-    padding: 1.5rem 0 0.5rem 0.7rem;
-    overflow-y: scroll;
-    scroll-padding-top: 1.5rem;
-
-    &:focus {
-      outline: none;
-    }
-  }
-}
+@import "sass/_normalize";
+@import "sass/_variable";
+@import "sass/_base";
+@import "sass/_sec--page-title";
+@import "sass/_sec--textarea";
+@import "sass/_sec--checkbox";
