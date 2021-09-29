@@ -7,34 +7,82 @@
     <title>文字列から好みの空白改行除去くんDX</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
     <script src="script.js"></script>
+    <script>
+      (function (d) {
+        var config = {
+            kitId: "ffo0qcl",
+            scriptTimeout: 3000,
+            async: true,
+          },
+          h = d.documentElement,
+          t = setTimeout(function () {
+            h.className =
+              h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
+          }, config.scriptTimeout),
+          tk = d.createElement("script"),
+          f = false,
+          s = d.getElementsByTagName("script")[0],
+          a;
+        h.className += " wf-loading";
+        tk.src = "https://use.typekit.net/" + config.kitId + ".js";
+        tk.async = true;
+        tk.onload = tk.onreadystatechange = function () {
+          a = this.readyState;
+          if (f || (a && a != "complete" && a != "loaded")) return;
+          f = true;
+          clearTimeout(t);
+          try {
+            Typekit.load(config);
+          } catch (e) {}
+        };
+        s.parentNode.insertBefore(tk, s);
+      })(document);
+    </script>
   </head>
   <body>
     <main class="container">
-      <h1 class="title">文字列から好みの空白改行除去くんDX</h1>
-      <div class="wrap">
+      <section class="sec--page-title">
+        <h1 class="page-title">
+          文字列から<span
+            ><span id="page-titie__blue">好</span>みの空白改行除去くんDX</span
+          >
+        </h1>
+      </section>
+      <section class="sec--textarea">
         <div class="wrap--textarea">
           <h2 class="label--textarea">除去元テキスト</h2>
-          <textarea
+          <div
             class="textarea textarea--before"
-            name=""
-            id=""
-            cols="30"
-            rows="10"
-            onkeyup="remove(value);"
-          ></textarea>
+            contenteditable="true"
+            placeholder="hello"
+            onkeyup="remove();"
+          ></div>
         </div>
         <div class="wrap--textarea">
           <h2 class="label--textarea">除去後テキスト</h2>
-          <textarea
-            class="textarea textarea--after"
-            name=""
-            id=""
-            cols="30"
-            rows="10"
-          ></textarea>
+          <div class="textarea textarea--after" contenteditable="true"></div>
         </div>
-      </div>
-      <div class="wrap--remove-checks"></div>
+      </section>
+      <section class="sec--checkbox">
+        <input
+          type="checkbox"
+          name=""
+          id="check01"
+          onchange="remove()"
+          checked
+        />
+        <label for="check01" class="checkbox">半角除去</label>
+        <input
+          type="checkbox"
+          name=""
+          id="check02"
+          onchange="remove()"
+          checked
+        />
+        <label for="check02" class="checkbox">全角除去</label>
+        <input type="checkbox" name="" id="check03" onchange="remove()" />
+        <label for="check03" class="checkbox">正規表現で除去※未実装</label>
+      </section>
     </main>
   </body>
 </html>

@@ -1,0 +1,29 @@
+html {
+  @media screen and (max-width: 600px) {
+    font-size: 14px;
+  }
+
+  @media screen and (max-width: 530px) {
+    font-size: 12px;
+  }
+
+  @media screen and (max-width: 450px) {
+    font-size: 10px;
+  }
+
+  @media screen and (max-width: 380px) {
+    font-size: 8px;
+  }
+}
+
+body {
+  font-family: tbudrgothic-std, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 3rem;
+}
